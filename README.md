@@ -2,7 +2,6 @@
 
 
 - Sistema de gerenciamento de pessoas e contatos (Desafio 2)
-- 
 
 # Ultilizado
 
