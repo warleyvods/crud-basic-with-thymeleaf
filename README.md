@@ -7,5 +7,5 @@
   ```sh
  spring.datasource.url=jdbc:postgresql://localhost:5432/XXX
 spring.datasource.username=postgres
-spring.datasource.password=XXXX
+spring.datasource.password=#senha
   ```
