@@ -2,10 +2,23 @@
 
 
 - Sistema de gerenciamento de pessoas e contatos (Desafio 2)
-# Necessario
-  - PostgreeSQL (com a criação de uma Database com nome teste ou outro nome de prefêrencia alteravel em (application.properties))
+- 
+
+# Ultilizado
+
+  - IDE Spring Tools ST4
+  - Spring boot
+  - JPA + Hibernate
+  - PostgreeSQL
+  - Bootstrap (front end)
+  - Html
+
+# Necessário para a execução
+  - PostgreeSQL Instalado(com a criação de uma Database com o nome de sua prefêrencia. Alteravel em (application.properties))
+  - Alteração em application.properties para a configuração do seu banco em postgree que está sendo executado.
+  
   ```sh
- spring.datasource.url=jdbc:postgresql://localhost:5432/**XXX**
-spring.datasource.username=postgres
-spring.datasource.password=**senha**
+ spring.datasource.url=jdbc:postgresql://localhost:5432/*XXX*
+spring.datasource.username=*postgres*
+spring.datasource.password=*senha*
   ```
