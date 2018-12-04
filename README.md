@@ -17,7 +17,7 @@
   - Alteração em application.properties para a configuração do seu banco em postgree que está sendo executado.
   
   ```sh
- spring.datasource.url=jdbc:postgresql://localhost:5432/*XXX*
-spring.datasource.username=*postgres*
-spring.datasource.password=*senha*
+ spring.datasource.url=jdbc:postgresql://localhost:5432/ **XXXX**
+spring.datasource.username= **postgres**
+spring.datasource.password= **senha**
   ```
