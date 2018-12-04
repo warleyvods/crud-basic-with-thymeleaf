@@ -1,10 +1,23 @@
-<<<<<<< HEAD
-# Desafio2
+# Desafio 2 Oobj - Teste para Estagio de Desenvolvimento
 
 
-teste
-=======
-# Desafio 2
+- Sistema de gerenciamento de pessoas e contatos (Desafio 2)
 
-Para a execução da aplicação é necessário ter instalado PostgreeSQL com a criação de um Database com nome "teste"
->>>>>>> a12352989d8d06078a6031bd21552cb6fa8400d4
+# Ultilizado
+
+  - IDE Spring Tools ST4
+  - Spring boot
+  - JPA + Hibernate
+  - PostgreeSQL
+  - Bootstrap (front end)
+  - Html
+
+# Necessário para a execução
+  - PostgreeSQL Instalado(com a criação de uma Database com o nome de sua prefêrencia. Alteravel em (application.properties))
+  - Alteração em application.properties para a configuração do seu banco em postgree que está sendo executado.
+  
+  ```sh
+ spring.datasource.url=jdbc:postgresql://localhost:5432/db
+spring.datasource.username=usuário
+spring.datasource.password=senha
+  ```
