@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<title>Editar Pessoa</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark  mb-5">
+		<div class="container">
+			<a class="navbar-brand" href="#">Projeto 2</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarNav" aria-controls="navbarNav"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item active red-text"><a class="nav-link"
+						th:href="@{/}">Lista de Pessoas</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" th:object="${pessoa}">
+		<div class="row">
+			<div class="col col-sm-12">
+				<h1 class="text-center">Editar Pessoa</h1>
+				<form th:action="@{/cadastrar}" method="post">
+					<!-- onsubmit="enviar()" -->
+					<input type="hidden" th:field="*{id}" />
+					<div class="form-group">
+						<label for="nomeInput">Nome do Contato</label> <input
+							id="nomeInput" name="nome" class="form-control" type="text"
+							th:field="*{nome}">
+					</div>
+					<div class="form-group">
+						<label for="telefoneInput">Telefone</label> <input
+							id="telefoneInput" name="telefone" class="form-control"
+							th:field="*{telefone}" type="text">
+					</div>
+					<div class="form-group">
+						<label for="emailInput">Email</label> <input id="emailInput"
+							name="email" class="form-control" th:field="*{email}"
+							type="email">
+					</div>
+					<div class="form-group">
+						<label for="empresaInput">Empresa</label> <input id="empresaInput"
+							name="empresa" class="form-control" th:field="*{empresa}"
+							type="text">
+					</div>
+					<button type="submit" class="btn btn-primary">Salvar Pessoa</button>
+				</form>
+				<a class="btn btn-primary pull-right mb-3"
+						th:href="@{/cadastrar/contato/{id}(id=${pessoa.id})}"
+						th:object="${pessoa}">Adicionar Contato</a>
+			</div>
+		</div>
+		<div class="row">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Nome</th>
+						<th scope="col">Telefone</th>
+						<th scope="col">Email</th>
+						<th scope="col">Empresa</th>
+						<th scope="col">Editar</th>
+						<th scope="col">Apagar</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="con : ${pessoa.contatos}">
+						<td th:text="${con.nome}"></td>
+						<td th:text="${con.telefone}"></td>
+						<td th:text="${con.email}"></td>
+						<td th:text="${con.empresa}"></td>
+
+						<td align="center" th:value="${con.id}"><a
+							th:href="@{/editar/contato/{id}(id=${con.id})}">EDITAR </a></td>
+
+
+						<td class="text-left" align="center" th:value="${con.id}">
+							<form th:object="${userDelete}"
+								th:action="@{/contatos/delete/{id}}">
+								<input type="hidden" name="method" value="delete" /> <a
+									id="botaoDelete"
+									onclick="return confirm('Deseja excluir esse usuário?')"
+									th:href="@{/delete/contato/{id}(id=${con.id})}"> APAGAR </a>
+							</form>
+						</td>
+
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	</div>
+	<!--<script src="/js/cadastrarContato.js"></script>  -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
+</body>
+</html>

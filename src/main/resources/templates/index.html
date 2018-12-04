@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<title>Editar Contato</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark  mb-5">
+		<div class="container">
+			<a class="navbar-brand" href="#">Projeto 2</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarNav" aria-controls="navbarNav"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item active red-text"><a class="nav-link"
+						th:href="@{/}">Lista de Pessoas</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<div class="container">
+			<h1 class="text-center">Lista de Pessoas</h1>
+			<div class="row justify-content-end mb-3">
+				<a class="btn btn-primary" th:href="@{/cadastrar}">Cadastrar Pessoa</a>
+			</div>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Nome</th>
+						<th scope="col">Telefone</th>
+						<th scope="col">Email</th>
+						<th scope="col">Empresa</th>
+						<th scope="col">Detalhes</th>
+						<th scope="col">Apagar</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="p : ${pessoa}">
+						<td th:text="${p.nome}"></td>
+						<td th:text="${p.telefone}"></td>
+						<td th:text="${p.email}"></td>
+						<td th:text="${p.empresa}"></td>
+		
+						<td align="center" th:value="${p.id}"><a
+							th:href="@{/editar/{id}(id=${p.id})}"> Detalhes
+						</a></td>
+						
+		
+						<td class="text-left" align="center" th:value="${p.id}">
+							<form th:object="${userDelete}"
+								th:action="@{/delete/{id}}">
+								<input type="hidden" name="method" value="delete" /> <a
+									id="botaoDelete"
+									onclick="return confirm('Deseja excluir esse usuário?')"
+									th:href="@{/delete/{id}(id=${p.id})}">
+									Apagar </a>
+							</form>
+						</td>
+		
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!--<script src="/js/cadastrarContato.js"></script>  -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
+</body>
+</html>
