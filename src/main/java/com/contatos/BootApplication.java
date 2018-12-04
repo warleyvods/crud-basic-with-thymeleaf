@@ -3,8 +3,11 @@ package com.contatos;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/*
- * Classe de inicialização da aplicação Spring Boot
+/**
+ * Classe de inicialização da aplicação
+ * 
+ * @author Warley
+ *
  */
 @SpringBootApplication
 public class BootApplication {

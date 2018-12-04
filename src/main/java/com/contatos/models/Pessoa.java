@@ -17,6 +17,12 @@ import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "pessoa")
+/**
+ * Representação em classe da tabela de Pessoa do banco de dados.
+ * 
+ * @author Warley
+ *
+ */
 public class Pessoa implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -40,13 +46,10 @@ public class Pessoa implements Serializable {
 	@Column
 	private String empresa;
 
-	// Relacionamento dos contatos com com a coluna idpessoa e id usando o fetchtype
-	// lazy
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "contatos", joinColumns = @JoinColumn(name = "idpessoa"), inverseJoinColumns = @JoinColumn(name = "id"))
 	private List<Contato> contatos;
 
-	// Lista de contatos
 	public List<Contato> getContatos() {
 		return contatos;
 	}

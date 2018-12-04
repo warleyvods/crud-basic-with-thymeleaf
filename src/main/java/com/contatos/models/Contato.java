@@ -10,12 +10,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
-/*
- * Entidade Contatos
- */
 
 @Entity
 @Table(name = "contatos")
+/**
+ * Representação em classe da tabela de Contatos do banco de dados.
+ * 
+ * @author Warley
+ *
+ */
 public class Contato implements Serializable {
 
 	private static final long serialVersionUID = 1L;
