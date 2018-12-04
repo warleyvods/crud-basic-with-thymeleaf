@@ -5,7 +5,7 @@
 # Necessario
   - PostgreeSQL (com a criação de uma Database com nome teste ou outro nome de prefêrencia alteravel em (application.properties))
   ```sh
- spring.datasource.url=jdbc:postgresql://localhost:5432/XXX
+ spring.datasource.url=jdbc:postgresql://localhost:5432/**XXX**
 spring.datasource.username=postgres
-spring.datasource.password=#senha
+spring.datasource.password=**senha**
   ```
