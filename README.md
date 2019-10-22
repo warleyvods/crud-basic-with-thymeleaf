@@ -1,4 +1,4 @@
-# Desafio 2 Oobj - Teste para Estagio de Desenvolvimento
+
 
 
 - Sistema de gerenciamento de pessoas e contatos (Desafio 2)
