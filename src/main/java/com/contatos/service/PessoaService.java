@@ -25,8 +25,7 @@ public class PessoaService {
 	 * @return
 	 */
 	public List<Pessoa> listarTodasAsPessoas() {
-		Iterable<Pessoa> itr = repository.findAll();
-		return (List<Pessoa>) itr;
+		return repository.findAll();
 	}
 
 	/**
@@ -64,7 +63,7 @@ public class PessoaService {
 	 * @param id
 	 */
 	public void deletarUsuario(long id) {
-		Pessoa pessoa = repository.getOne(id);
+		Pessoa pessoa = findById(id);
 		repository.delete(pessoa);
 	}
 }
