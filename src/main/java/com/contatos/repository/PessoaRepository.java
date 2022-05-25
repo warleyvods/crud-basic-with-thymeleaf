@@ -6,5 +6,4 @@ import com.contatos.models.Pessoa;
 
 @Repository
 public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
-
 }
